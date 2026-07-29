@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Бобёр Симулятор</title>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e24, #2b1e1a);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.menu-card {
+    background-color: #2a2a32;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid #3a3a46;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.avatar {
+    font-size: 90px;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 10px 0 5px 0;
+    color: #ffffff;
+}
+
+p {
+    font-size: 15px;
+    color: #a0a0b0;
+    margin-bottom: 30px;
+}
+
+.play-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(45deg, #ff4757, #ff6b81);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+}
+
+#video-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 9999;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>
+</head>
+<body>
+
+<div class="menu-card">
+    <div class="avatar">🦫</div>
+    <h1>Бобёр Симулятор</h1>
+    <p>Начни строить свою плотину прямо сейчас!</p>
+    <button class="play-btn" id="start-btn">Начать играть</button>
+</div>
+
+<div id="video-wrapper">
+    <video id="rickroll" src="InShot_20260724_005742302.mp4" playsinline></video>
+</div>
+
+<script>
+document.getElementById('start-btn').addEventListener('click', function() {
+    var wrapper = document.getElementById('video-wrapper');
+    var video = document.getElementById('rickroll');
+    wrapper.style.display = 'block';
+    video.play();
+});
+</script>
+</body>
+</html>
